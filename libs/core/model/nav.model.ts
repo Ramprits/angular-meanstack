@@ -1,6 +1,7 @@
 export class NavModel {
   _id: string;
-  name: string;
+  label: string;
   url: string;
+  routerLink: string;
   icon: string;
 }

@@ -12,51 +12,20 @@
 
     <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
+            <a class="navbar-item" [routerLink]="['/home']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
                 Home
             </a>
 
             <a class="navbar-item" [routerLink]="['/news']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
                 News
             </a>
-
-
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="/documentation/overview/start/">
-                    Doc
-                </a>
-                <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item" href="/documentation/overview/start/">
-                        Overview
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
-                        Modifiers
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                        Columns
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                        Layout
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                        Form
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                        Elements
-                    </a>
-                    <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                        Components
-                    </a>
-                </div>
-            </div>
         </div>
 
         <div class="navbar-end">
-            <a class="navbar-item">
+            <a class="navbar-item" [routerLink]="['/register']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
                 Register
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item" [routerLink]="['/login']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
                 Login
             </a>
             <a *ngIf="isVisible" class="navbar-item">

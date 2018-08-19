@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 // libs
-import { environment } from '@myworkspace/core';
+import { AuthModule } from '@myworkspace/features/ui/auth/auth.module';
 
 // app
 import { CoreModule } from './core/core.module';
@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from '@myworkspace/features/ui/header/header.component';
 
 @NgModule({
-  imports: [CoreModule, SharedModule, AppRoutingModule],
+  imports: [CoreModule, SharedModule, AppRoutingModule, AuthModule],
   declarations: [AppComponent, HeaderComponent],
   bootstrap: [AppComponent]
 })

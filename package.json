@@ -23,7 +23,8 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "clean.shared": "cd libs/ && git clean -dfX && cd ../xplat/ && git clean -dfX",
+    "clean.shared":
+      "cd libs/ && git clean -dfX && cd ../xplat/ && git clean -dfX",
     "clean": "npx rimraf hooks node_modules package-lock.json && npm i",
     "build.web.blog": "ng build --prod --aot",
     "start.web.blog": "ng serve --port 5000 web-blog"
@@ -38,7 +39,6 @@
     "@angular/platform-browser": "6.0.1",
     "@angular/platform-browser-dynamic": "6.0.1",
     "@angular/router": "6.0.1",
-    "@fortawesome/fontawesome-free": "^5.2.0",
     "@myworkspace/scss": "file:libs/scss",
     "@ngrx/effects": "5.2.0",
     "@ngrx/router-store": "5.2.0",
