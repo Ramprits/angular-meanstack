@@ -26,7 +26,7 @@
     "clean.shared": "cd libs/ && git clean -dfX && cd ../xplat/ && git clean -dfX",
     "clean": "npx rimraf hooks node_modules package-lock.json && npm i",
     "build.web.blog": "ng build --prod --aot",
-    "start.web.blog": "ng serve web-blog"
+    "start.web.blog": "ng serve --port 5000 web-blog"
   },
   "private": true,
   "dependencies": {
