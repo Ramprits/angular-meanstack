@@ -4,6 +4,6 @@ export interface IGenericRepository<T, id> {
   save(t: T): Observable<T>;
   update(id: id, t: T): Observable<T>;
   findOne(id: id): Observable<T>;
-  findAll(): Observable<T[]>;
+  findAll(): Observable<{ articles: T[] }>;
   delete(id: id): Observable<any>;
 }

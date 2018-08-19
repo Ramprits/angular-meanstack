@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseComponent } from '@myworkspace/core';
 import { NewsService } from '@myworkspace/core/services/newsService';
+import { NewsModule } from '../news.module';
+import { NewsModel } from '@myworkspace/core/model/news.model';
 
 @Component({
   selector: 'scope-news',
@@ -11,10 +13,9 @@ export class NewsComponent extends BaseComponent implements OnInit {
   constructor(public newsService: NewsService) {
     super();
   }
-  ngOnInit(): void {
+  ngOnInit() {
     this.newsService.findAll().subscribe(data => {
-      this.news = data;
-      console.log(this.news);
+      this.news = data.articles;
     });
   }
 }

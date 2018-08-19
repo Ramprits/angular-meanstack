@@ -16,8 +16,8 @@ export abstract class NewsRepository<T, id>
   findOne(id: id): Observable<T> {
     throw new Error('Method not implemented.');
   }
-  findAll(): Observable<T[]> {
-    return this.http.get<T[]>(Base_Url);
+  findAll(): Observable<{ articles: T[] }> {
+    return this.http.get<{ articles: T[] }>(Base_Url);
   }
   delete(id: id): Observable<any> {
     throw new Error('Method not implemented.');

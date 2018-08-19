@@ -6,6 +6,7 @@ import { BaseComponent } from '@myworkspace/core';
   templateUrl: 'header.component.html'
 })
 export class HeaderComponent extends BaseComponent implements OnInit {
+  isVisible = false;
   constructor() {
     super();
   }

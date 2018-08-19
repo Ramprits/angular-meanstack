@@ -1,6 +1,24 @@
-<div class="p-x-20">
-    <pre>
-         {{news.articles|json}}
-    </pre>
-
+<div class="columns is-multiline">
+    <div class="column is-4" *ngFor="let new of news">
+        <div class="card" style="height:450px; cursor: pointer;">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img *ngIf="!new?.urlToImage" src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+                    <img *ngIf="new?.urlToImage" [src]="new?.urlToImage" alt="Image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img *ngIf="new?.urlToImage" [src]="new?.urlToImage" alt="Image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="is-4">{{new.title}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
