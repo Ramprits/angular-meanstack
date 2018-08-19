@@ -10,12 +10,21 @@ import { NewsModel } from '@myworkspace/core/model/news.model';
 })
 export class NewsComponent extends BaseComponent implements OnInit {
   news: any;
+  isLoading = false;
   constructor(public newsService: NewsService) {
     super();
   }
   ngOnInit() {
-    this.newsService.findAll().subscribe(data => {
-      this.news = data.articles;
-    });
+    try {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.newsService.findAll().subscribe(data => {
+          this.news = data.articles;
+          this.isLoading = false;
+        });
+      }, 2000);
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 }
