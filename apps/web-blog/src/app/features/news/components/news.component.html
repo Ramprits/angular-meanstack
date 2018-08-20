@@ -7,7 +7,7 @@
     <div class="column is-4" *ngFor="let new of news">
         <div class="card" style="height:450px; cursor: pointer;">
             <div class="card-image">
-                <figure class="image is-4by3">
+                <figure class="image is-4by3" (click)="getNewsDetail(new.title)">
                     <img *ngIf="!new?.urlToImage" src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
                     <img *ngIf="new?.urlToImage" [src]="new?.urlToImage" alt="Image">
                 </figure>

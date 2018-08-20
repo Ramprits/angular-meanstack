@@ -13,8 +13,8 @@ export abstract class NewsRepository<T, id>
   update(id: id, t: T): Observable<T> {
     throw new Error('Method not implemented.');
   }
-  findOne(id: id): Observable<T> {
-    throw new Error('Method not implemented.');
+  findOne(id: id): Observable<{ articles: T }> {
+    return this.http.get<{ articles: T }>(Base_Url);
   }
   findAll(): Observable<{ articles: T[] }> {
     return this.http.get<{ articles: T[] }>(Base_Url);

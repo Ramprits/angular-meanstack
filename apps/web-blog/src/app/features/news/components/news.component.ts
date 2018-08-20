@@ -3,6 +3,7 @@ import { BaseComponent } from '@myworkspace/core';
 import { NewsService } from '@myworkspace/core/services/newsService';
 import { NewsModule } from '../news.module';
 import { NewsModel } from '@myworkspace/core/model/news.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'scope-news',
@@ -11,7 +12,7 @@ import { NewsModel } from '@myworkspace/core/model/news.model';
 export class NewsComponent extends BaseComponent implements OnInit {
   news: any;
   isLoading = false;
-  constructor(public newsService: NewsService) {
+  constructor(public newsService: NewsService, private router: Router) {
     super();
   }
   ngOnInit() {
@@ -22,9 +23,13 @@ export class NewsComponent extends BaseComponent implements OnInit {
           this.news = data.articles;
           this.isLoading = false;
         });
-      }, 2000);
+      }, 0);
     } catch (error) {
       console.log(error.message);
     }
+  }
+
+  getNewsDetail(newsData: string) {
+    this.router.navigate(['/news', newsData]);
   }
 }
