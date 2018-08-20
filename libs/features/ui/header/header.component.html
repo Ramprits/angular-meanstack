@@ -22,13 +22,13 @@
         </div>
 
         <div class="navbar-end">
-            <a class="navbar-item" [routerLink]="['/register']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
+            <a *ngIf="!token" class="navbar-item" [routerLink]="['/register']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
                 Register
             </a>
-            <a class="navbar-item" [routerLink]="['/login']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
+            <a *ngIf="!token" class="navbar-item" [routerLink]="['/login']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
                 Login
             </a>
-            <a *ngIf="isVisible" class="navbar-item">
+            <a *ngIf="token" class="navbar-item" (click)="logout()">
                 Logout
             </a>
         </div>

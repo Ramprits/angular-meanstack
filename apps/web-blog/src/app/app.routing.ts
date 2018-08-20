@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './features/shared/shared.module';
 import { LoginComponent } from '@myworkspace/features/ui/auth/login.component';
 import { RegisterComponent } from '@myworkspace/features/ui/auth/register.component';
+import { AuthGuard } from '@myworkspace/core/services/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
   },
   {
     path: 'news',
-    loadChildren: './features/news/news.module#NewsModule'
+    loadChildren: './features/news/news.module#NewsModule',
+    canActivate: [AuthGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }

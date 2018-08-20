@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '@myworkspace/core/services/auth/auth.service';
+import { TokenService } from '@myworkspace/core/services/token-service/token.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
   ) {
     super();
   }
@@ -47,7 +49,9 @@ export class LoginComponent extends BaseComponent implements OnInit {
     }
 
     this.authService.login(loginData).subscribe(
-      response => {
+      data => {
+        this.tokenService.SetToken(data.token);
+        this.loginForm.reset();
         this.router.navigate(['/home']);
       },
       err => {

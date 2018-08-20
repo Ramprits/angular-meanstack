@@ -23,8 +23,7 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "clean.shared":
-      "cd libs/ && git clean -dfX && cd ../xplat/ && git clean -dfX",
+    "clean.shared": "cd libs/ && git clean -dfX && cd ../xplat/ && git clean -dfX",
     "clean": "npx rimraf hooks node_modules package-lock.json && npm i",
     "build.web.blog": "ng build --prod --aot",
     "start.web.blog": "ng serve --port 5000 web-blog"
@@ -53,6 +52,8 @@
     "nativescript-ngx-fonticon": "^4.2.0",
     "nativescript-theme-core": "^1.0.4",
     "ngrx-store-freeze": "0.2.2",
+    "ngx-cookie-service": "^1.0.10",
+    "ngx-toastr": "^9.0.2",
     "reflect-metadata": "^0.1.12",
     "rxjs": "6.0.0",
     "rxjs-compat": "^6.2.2",

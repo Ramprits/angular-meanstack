@@ -9,6 +9,7 @@ import {
 import { AuthService } from '@myworkspace/core/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { AuthModel } from '@myworkspace/core/model/auth.model';
+import { TokenService } from '@myworkspace/core/services/token-service/token.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,8 @@ export class RegisterComponent extends BaseComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
   ) {
     super();
   }
@@ -53,7 +55,9 @@ export class RegisterComponent extends BaseComponent implements OnInit {
   onSubmit(registerData: AuthModel) {
     console.log(registerData);
     this.authService.register(registerData).subscribe(
-      () => {
+      data => {
+        this.tokenService.SetToken(data.token);
+        this.registerForm.reset();
         this.router.navigate(['/home']);
       },
       err => {
