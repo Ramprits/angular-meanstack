@@ -9,6 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { AuthService } from '@myworkspace/core/services/auth/auth.service';
 import { TokenService } from '@myworkspace/core/services/token-service/token.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private ts: ToastrService
   ) {
     super();
   }
@@ -56,7 +58,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
       },
       err => {
         if (err.error.message) {
-          console.log(err.error.message);
+          this.ts.error(err.error.message);
         }
       }
     );
