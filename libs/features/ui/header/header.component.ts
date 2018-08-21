@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseComponent } from '@myworkspace/core';
 import { TokenService } from '@myworkspace/core/services/token-service/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { TokenService } from '@myworkspace/core/services/token-service/token.ser
 export class HeaderComponent extends BaseComponent implements OnInit {
   isVisible = false;
   token: any;
-  constructor(private tokenService: TokenService) {
+  constructor(private tokenService: TokenService, private router: Router) {
     super();
   }
 
@@ -19,5 +20,6 @@ export class HeaderComponent extends BaseComponent implements OnInit {
 
   logout() {
     this.tokenService.DeleteToken();
+    this.router.navigate(['/login']);
   }
 }
