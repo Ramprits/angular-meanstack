@@ -6,4 +6,6 @@ import { ScopeCoreModule } from '@myworkspace/web';
 @NgModule({
   imports: [ScopeCoreModule]
 })
-export class CoreModule {}
+export class CoreModule {
+
+}
