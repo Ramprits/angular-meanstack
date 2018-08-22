@@ -1,8 +1,7 @@
-<div *ngIf="isLoading;else newsTem">
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
 
-    <span> <i class="fas fa-spinner-third"></i> Please wait while loading...</span>
-</div>
-<ng-template #newsTem></ng-template>
 <div class="columns is-multiline">
     <div class="column is-4" *ngFor="let new of news">
         <div class="card" style="height:450px; cursor: pointer;">

@@ -53,6 +53,7 @@
     "nativescript-theme-core": "^1.0.4",
     "ngrx-store-freeze": "0.2.2",
     "ngx-cookie-service": "^1.0.10",
+    "ngx-spinner": "^6.1.2",
     "ngx-toastr": "^9.0.2",
     "reflect-metadata": "^0.1.12",
     "rxjs": "6.0.0",

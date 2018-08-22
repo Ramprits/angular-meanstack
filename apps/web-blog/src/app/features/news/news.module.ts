@@ -7,6 +7,7 @@ import {
   NewsDetailComponent,
   NewsComponent
 } from './components';
+import { NgxModule } from '@myworkspace/core/ngx/ngx.module';
 
 export const routes: Routes = [
   {
@@ -20,7 +21,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [SharedModule, RouterModule.forChild(routes)],
+  imports: [SharedModule, RouterModule.forChild(routes), NgxModule],
   declarations: [...NEWS_COMPONENTS],
   exports: [...NEWS_COMPONENTS]
 })

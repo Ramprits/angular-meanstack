@@ -27,6 +27,7 @@ export class PostCreateComponent extends BaseComponent implements OnInit {
   onSave(postdata: any) {
     this.ps.addPost(postdata).subscribe(data => {
       this.ts.success(data.message);
+      this.postForm.reset();
     });
   }
 }
