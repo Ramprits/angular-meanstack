@@ -19,5 +19,5 @@ export interface Article {
 
 export interface Source {
   id: null | string;
-  name: string;
+ 
 }
