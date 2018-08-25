@@ -10,16 +10,20 @@ import { Router } from '@angular/router';
 export class HeaderComponent extends BaseComponent implements OnInit {
   isVisible = false;
   token: any;
+  user: any;
   constructor(private tokenService: TokenService, private router: Router) {
     super();
+    this.token = this.tokenService.GetToken();
   }
 
   ngOnInit() {
-    this.token = this.tokenService.GetToken();
+    this.user = this.tokenService.GetPayLoad();
+    console.log(this.user.username);
   }
 
   logout() {
     this.tokenService.DeleteToken();
     this.router.navigate(['/login']);
+    this.token = null;
   }
 }

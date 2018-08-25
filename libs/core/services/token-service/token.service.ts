@@ -19,4 +19,13 @@ export class TokenService {
   DeleteToken() {
     this.cookieService.delete(cookie);
   }
+  GetPayLoad() {
+    let token = this.GetToken();
+    let payload;
+    if (token) {
+      payload = token.split('.')[1];
+      payload = JSON.parse(window.atob(payload));
+    }
+    return payload.data;
+  }
 }

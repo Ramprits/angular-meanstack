@@ -1,14 +1,22 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
     <div class="field">
-        <label class="label">User Name:</label>
-        <p class="control">
-            <input class="input" type="text" formControlName="username" placeholder="please enter user name">
-        </p>
+        <label class="label">User name</label>
+        <div class="control has-icons-left">
+            <input class="input" type="text" placeholder="please enter user name" formControlName="username">
+            <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+            </span>
+        </div>
+        <!-- <p class="help is-success">This username is available</p> -->
     </div>
+
     <div class="field">
         <label class="label">Password:</label>
-        <p class="control">
+        <p class="control has-icons-left">
             <input class="input" type="password" formControlName="password" placeholder="please enter password">
+            <span class="icon is-small is-left">
+                <i class="fas fa-key"></i>
+            </span>
         </p>
     </div>
 

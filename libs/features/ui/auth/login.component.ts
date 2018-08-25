@@ -52,9 +52,11 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
     this.authService.login(loginData).subscribe(
       data => {
-        this.tokenService.SetToken(data.token);
-        this.loginForm.reset();
-        this.router.navigate(['/home']);
+        if (data) {
+          this.loginForm.reset();
+          this.router.navigate(['/home']);
+          this.tokenService.SetToken(data.token);
+        }
       },
       err => {
         if (err.error.message) {

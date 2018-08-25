@@ -22,6 +22,9 @@
         </div>
 
         <div class="navbar-end">
+            <a *ngIf="token" class="navbar-item">
+               Welcome {{user.username}}
+            </a>
             <a *ngIf="!token" class="navbar-item" [routerLink]="['/register']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
                 Register
             </a>
