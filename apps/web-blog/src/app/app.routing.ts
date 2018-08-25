@@ -18,11 +18,6 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './features/home/home.module#HomeModule'
   },
-  {
-    path: 'news',
-    loadChildren: './features/news/news.module#NewsModule',
-    canActivate: [AuthGuard]
-  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }
 ];

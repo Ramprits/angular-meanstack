@@ -17,8 +17,8 @@ export abstract class NavRepository<T, id>
   findOne(id: id): Observable<T> {
     throw new Error('Method not implemented.');
   }
-  findAll(): Observable<T[]> {
-    return this.http.get<T[]>(Base_Url);
+  findAll(): Observable<{ message: string; values: T[] }> {
+    return this.http.get<{ message: string; values: T[] }>(Base_Url);
   }
   delete(id: id): Observable<any> {
     throw new Error('Method not implemented.');

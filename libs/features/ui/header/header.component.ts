@@ -18,7 +18,6 @@ export class HeaderComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.tokenService.GetPayLoad();
-    console.log(this.user.username);
   }
 
   logout() {
