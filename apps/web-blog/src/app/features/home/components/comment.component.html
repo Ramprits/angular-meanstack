@@ -1,0 +1,50 @@
+<div class="columns">
+
+    <div class="column">
+        <div class="card m-b-12">
+            <div class="card-content">
+                <div class="content">
+                    <form [formGroup]="commentForm" (ngSubmit)="onSave()">
+                        <div class="field">
+                            <label class="label"></label>
+                            <p class="control">
+                                <textarea class="textarea" formControlName="comment" placeholder="Please enter your post here..."></textarea>
+                            </p>
+                        </div>
+                        <div class="field is-grouped m-t-10">
+                            <p class="control">
+                                <button type="submit" [disabled]="commentForm.invalid" class="button is-info is-small">Add
+                                    comment
+                                </button>
+                            </p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <article class="media" *ngFor="let comment of comments">
+            <figure class="media-left">
+                <p class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png">
+                </p>
+            </figure>
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>
+                            {{comment?.username}}
+                        </strong> <small>
+                            {{timeFromNow(comment.createdAt)}}
+                        </small>
+                        <br> {{comment?.comment}}
+                    </p>
+                </div>
+           
+            </div>
+
+        </article>
+    </div>
+
+</div>

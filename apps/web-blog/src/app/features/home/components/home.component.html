@@ -46,7 +46,6 @@
     </div>
     <div class="column is-8">
       <app-postcreate></app-postcreate>
-
       <article class="media" *ngFor="let post of posts">
         <figure class="media-left">
           <p class="image is-64x64">
@@ -66,11 +65,13 @@
           </div>
           <nav class="level is-mobile">
             <div class="level-left">
-              <a class="level-item">
-                <span class="icon is-small"><i class="fas fa-reply"></i></span>
+              <a class="level-item" (click)="onLike(post)">
+                <span class="icon is-small"><i class="far fa-thumbs-up" [ngClass]="(!checkInArray(post.likes,user.username))?'':'has-text-primary'"></i></span>
+                {{post.totalLikes}}
               </a>
-              <a class="level-item">
+              <a class="level-item" (click)="addComment(post)">
                 <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+              <p class="inline"> {{post.comments.length}}</p>
               </a>
               <a class="level-item">
                 <span class="icon is-small"><i class="fas fa-heart has-text-danger"></i></span>

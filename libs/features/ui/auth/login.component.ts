@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 import { AuthService } from '@myworkspace/core/services/auth/auth.service';
 import { TokenService } from '@myworkspace/core/services/token-service/token.service';
 import { ToastrService } from 'ngx-toastr';
+import * as io from 'socket.io-client';
+import { environment } from '../../../../apps/web-blog/src/environments/environment';
+const base_url = environment.api_url;
 
 @Component({
   selector: 'app-login',
@@ -17,6 +20,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent extends BaseComponent implements OnInit {
   loginForm: FormGroup;
+  socket: any;
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -25,6 +30,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
     private ts: ToastrService
   ) {
     super();
+    this.socket = io(base_url);
   }
 
   ngOnInit() {
@@ -54,8 +60,9 @@ export class LoginComponent extends BaseComponent implements OnInit {
       data => {
         if (data) {
           this.loginForm.reset();
-          this.router.navigate(['/home']);
           this.tokenService.SetToken(data.token);
+          this.socket.emit('refresh', {});
+          this.router.navigateByUrl('');
         }
       },
       err => {

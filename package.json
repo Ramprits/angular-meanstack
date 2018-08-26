@@ -48,6 +48,7 @@
     "@nrwl/nx": "6.1.0",
     "bulma": "^0.7.1",
     "core-js": "^2.5.4",
+    "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "nativescript-angular": "~6.1.0",
     "nativescript-ngx-fonticon": "^4.2.0",

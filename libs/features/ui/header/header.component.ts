@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { BaseComponent } from '@myworkspace/core';
 import { TokenService } from '@myworkspace/core/services/token-service/token.service';
 import { Router } from '@angular/router';
@@ -7,22 +7,25 @@ import { Router } from '@angular/router';
   selector: 'app-header',
   templateUrl: 'header.component.html'
 })
-export class HeaderComponent extends BaseComponent implements OnInit {
+export class HeaderComponent extends BaseComponent
+  implements OnInit, AfterViewInit {
   isVisible = false;
-  token: any;
+  userToken: any;
   user: any;
   constructor(private tokenService: TokenService, private router: Router) {
     super();
-    this.token = this.tokenService.GetToken();
   }
-
+  ngAfterViewInit(): void {}
   ngOnInit() {
-    this.user = this.tokenService.GetPayLoad();
+    const token = this.tokenService.GetPayLoad();
+    if (token) {
+      this.userToken = token;
+    }
   }
 
   logout() {
     this.tokenService.DeleteToken();
     this.router.navigate(['/login']);
-    this.token = null;
+    this.userToken = null;
   }
 }

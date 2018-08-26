@@ -13,10 +13,4 @@ export class PostService extends PostRepository<any, string> {
   constructor(public httpClient: HttpClient) {
     super(httpClient);
   }
-
-  addPost(body: any): Observable<any> {
-    return this.httpClient.post<any>(base_url, body);
-  }
-
- 
 }
