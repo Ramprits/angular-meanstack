@@ -48,7 +48,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
       setTimeout(() => {
         this.ps.findAll().subscribe(
           post => {
-            this.posts = post.posts;
+            this.posts = post.posts.reverse();
             this.ngxLoading.hide();
           },
           error => {

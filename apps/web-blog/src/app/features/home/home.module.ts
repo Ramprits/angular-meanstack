@@ -5,15 +5,18 @@ import { SharedModule } from '../shared/shared.module';
 import { HOME_COMPONENTS, HomeComponent, CommentComponent } from './components';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SideNavModule } from '../side-nav/side-nav.module';
+import { AuthGuard } from '@myworkspace/core/services/auth/auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: ':id',
-    component: CommentComponent
+    component: CommentComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

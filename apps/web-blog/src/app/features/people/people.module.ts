@@ -4,11 +4,13 @@ import { PeopleComponent } from './people.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SideNavModule } from '../side-nav/side-nav.module';
+import { AuthGuard } from '@myworkspace/core/services/auth/auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    component: PeopleComponent
+    component: PeopleComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
