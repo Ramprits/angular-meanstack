@@ -24,7 +24,7 @@ export class PostCreateComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.postForm = this.fb.group({
-      post: ['']
+      post: ['', [Validators.required]]
     });
   }
 

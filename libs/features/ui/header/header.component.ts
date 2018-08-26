@@ -15,13 +15,13 @@ export class HeaderComponent extends BaseComponent
   constructor(private tokenService: TokenService, private router: Router) {
     super();
   }
-  ngAfterViewInit(): void {}
-  ngOnInit() {
+  ngAfterViewInit(): void {
     const token = this.tokenService.GetPayLoad();
     if (token) {
       this.userToken = token;
     }
   }
+  ngOnInit() {}
 
   logout() {
     this.tokenService.DeleteToken();

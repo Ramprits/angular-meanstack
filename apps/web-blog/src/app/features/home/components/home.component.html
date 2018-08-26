@@ -3,17 +3,17 @@
     <p style="font-size: 20px; color: white">Loading...</p>
   </ngx-spinner>
   <div class="columns">
-    <div class="column is-2">
+    <div class="column is-3">
       <div class="columns is-hidden-mobile">
-        <div class="column is-3 is-size-7">
+        <div class="column is-3 is-size-7 has-text-weight-bold">
           Post <br>
           <label class="has-text-success">10</label>
         </div>
-        <div class="column is-4 is-size-7">
+        <div class="column is-4 is-size-7 has-text-weight-bold">
           Following <br>
           <label class="has-text-danger">100</label>
         </div>
-        <div class="column is-4 is-size-7">
+        <div class="column is-4 is-size-7 has-text-weight-bold">
           Followers <br>
           <label class="has-text-primary">120</label>
         </div>
@@ -23,7 +23,8 @@
           Streams
         </p>
         <ul class="menu-list">
-          <li><a>People <span class="icon">
+          <li><a [routerLink]="['/home']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Stream <span
+                class="icon">
                 <i class="fas fa-people-carry"></i>
               </span></a>
           </li>
@@ -44,9 +45,10 @@
 
       </aside>
     </div>
-    <div class="column is-8">
+    <div class="column is-7">
       <app-postcreate></app-postcreate>
-      <article class="media" *ngFor="let post of posts">
+
+      <article class="media m-t-5" *ngFor="let post of posts">
         <figure class="media-left">
           <p class="image is-64x64">
             <img src="https://bulma.io/images/placeholders/128x128.png">
@@ -70,8 +72,8 @@
                 {{post.totalLikes}}
               </a>
               <a class="level-item" (click)="addComment(post)">
-                <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-              <p class="inline"> {{post.comments.length}}</p>
+                <span class="icon is-small"><i class="fas fa-retweet" [ngClass]="(!checkInArray(post.comments,user.username))?'':'has-text-primary'"></i></span>
+                <p class="inline"> {{post.comments.length}}</p>
               </a>
               <a class="level-item">
                 <span class="icon is-small"><i class="fas fa-heart has-text-danger"></i></span>

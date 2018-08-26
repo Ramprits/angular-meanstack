@@ -20,7 +20,6 @@ export class AuthService {
       )
       .pipe(
         tap(data => {
-          console.log(JSON.stringify(data));
         })
       );
   }
@@ -33,7 +32,6 @@ export class AuthService {
       )
       .pipe(
         tap(data => {
-          console.log(JSON.stringify(data));
         })
       );
   }

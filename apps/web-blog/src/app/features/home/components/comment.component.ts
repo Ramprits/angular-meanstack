@@ -18,6 +18,7 @@ export class CommentComponent extends BaseComponent implements OnInit {
   postId: any;
   commentForm: FormGroup;
   comments: any;
+  post: string;
   constructor(
     private fb: FormBuilder,
     private ps: PostService,
@@ -41,7 +42,7 @@ export class CommentComponent extends BaseComponent implements OnInit {
   }
   getPost() {
     this.ps.findOne(this.postId).subscribe(data => {
-      console.log(data.post.comments);
+      this.post = data.post.post;
       this.comments = data.post.comments.reverse();
     });
   }

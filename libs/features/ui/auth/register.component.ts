@@ -53,7 +53,6 @@ export class RegisterComponent extends BaseComponent implements OnInit {
   }
 
   onSubmit(registerData: AuthModel) {
-    console.log(registerData);
     this.authService.register(registerData).subscribe(
       data => {
         this.tokenService.SetToken(data.token);

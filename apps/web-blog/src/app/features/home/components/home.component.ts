@@ -4,7 +4,6 @@ import { BaseComponent } from '@myworkspace/core';
 import { PostService } from '../../../core/services/post.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
-import { PostModel } from '@myworkspace/core/model/post.model';
 import * as moment from 'moment';
 import * as io from 'socket.io-client';
 import { environment } from 'apps/web-blog/src/environments/environment';
@@ -18,7 +17,7 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class HomeComponent extends BaseComponent implements OnInit {
-  posts: PostModel[];
+  posts: any;
   user: any;
   socket: any;
   constructor(
@@ -52,8 +51,12 @@ export class HomeComponent extends BaseComponent implements OnInit {
             this.posts = post.posts;
             this.ngxLoading.hide();
           },
-          () => {
+          error => {
             this.ngxLoading.hide();
+            if (error.error.token == null) {
+              this.tokenService.DeleteToken();
+              this.router.navigate(['/home']);
+            }
           }
         );
       }, 10);

@@ -19,6 +19,10 @@ export class TokenService {
   DeleteToken() {
     this.cookieService.delete(cookie);
   }
+  DeleteAllToken() {
+    this.cookieService.deleteAll(cookie);
+  }
+
   GetPayLoad() {
     let token = this.GetToken();
     let payload;

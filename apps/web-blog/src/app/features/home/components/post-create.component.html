@@ -26,11 +26,10 @@
                 </div>
                 <div class="field is-grouped m-t-10">
                     <p class="control">
-                        <button type="submit" class="button is-info is-small">Post</button>
+                        <button type="submit" [disabled]="postForm.invalid" class="button is-info is-small">Post</button>
                     </p>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
