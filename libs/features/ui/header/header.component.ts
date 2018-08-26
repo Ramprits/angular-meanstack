@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class HeaderComponent extends BaseComponent
   implements OnInit, AfterViewInit {
   isVisible = false;
-  userToken: any;
   user: any;
   constructor(private tokenService: TokenService, private router: Router) {
     super();
@@ -18,7 +17,7 @@ export class HeaderComponent extends BaseComponent
   ngAfterViewInit(): void {
     const token = this.tokenService.GetPayLoad();
     if (token) {
-      this.userToken = token;
+      this.user = token;
     }
   }
   ngOnInit() {}
@@ -26,6 +25,6 @@ export class HeaderComponent extends BaseComponent
   logout() {
     this.tokenService.DeleteToken();
     this.router.navigate(['/login']);
-    this.userToken = null;
+    this.user = null;
   }
 }

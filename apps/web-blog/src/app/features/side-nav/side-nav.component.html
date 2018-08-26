@@ -1,0 +1,40 @@
+<div class="columns is-hidden-mobile">
+  <div class="column is-3 is-size-7 has-text-weight-bold">
+    Post <br>
+    <label class="has-text-success">10</label>
+  </div>
+  <div class="column is-4 is-size-7 has-text-weight-bold">
+    Following <br>
+    <label class="has-text-danger">100</label>
+  </div>
+  <div class="column is-4 is-size-7 has-text-weight-bold">
+    Followers <br>
+    <label class="has-text-primary">120</label>
+  </div>
+</div>
+<aside class="menu">
+  <p class="menu-label">
+    Streams
+  </p>
+  <ul class="menu-list">
+    <li><a [routerLink]="['/home']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Stream <span class="icon">
+          <i class="fas fa-people-carry"></i>
+        </span></a>
+    </li>
+    <li><a [routerLink]="['/people']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">People <span
+          class="icon">
+          <i class="fas fa-home"></i>
+        </span></a></li>
+
+    <li><a>Followers <span class="icon">
+          <i class="fas fa-fire"></i>
+        </span></a></li>
+    <li><a>Photos <span class="icon">
+          <i class="fas fa-image"></i>
+        </span></a></li>
+    <li><a>Notification <span class="icon">
+          <i class="fab fa-superpowers"></i>
+        </span></a></li>
+  </ul>
+
+</aside>

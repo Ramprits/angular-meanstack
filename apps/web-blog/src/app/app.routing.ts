@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './features/home/home.module#HomeModule'
   },
+  {
+    path: 'people',
+    loadChildren: './features/people/people.module#PeopleModule'
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }
 ];
