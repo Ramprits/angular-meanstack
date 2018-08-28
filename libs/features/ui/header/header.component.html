@@ -16,25 +16,25 @@
                 Home
             </a>
 
-            <a class="navbar-item" [routerLink]="['/people']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
-                People
+            <a class="navbar-item" [routerLink]="['/product']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
+                Product
             </a>
         </div>
-        
-            <div class="navbar-end">
-                <a *ngIf="user" class="navbar-item">
-                    Welcome {{user.username}}
-                </a>
-                <a *ngIf="!user" class="navbar-item" [routerLink]="['/register']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
-                    Register
-                </a>
-                <a *ngIf="!user" class="navbar-item" [routerLink]="['/login']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
-                    Login
-                </a>
-                <a *ngIf="user" class="navbar-item" (click)="logout()">
-                    Logout
-                </a>
-            </div>
+
+        <div class="navbar-end">
+            <a *ngIf="user" class="navbar-item">
+                Welcome {{user.username}}
+            </a>
+            <a *ngIf="!user" class="navbar-item" [routerLink]="['/register']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
+                Register
+            </a>
+            <a *ngIf="!user" class="navbar-item" [routerLink]="['/login']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">
+                Login
+            </a>
+            <a *ngIf="user" class="navbar-item" (click)="logout()">
+                Logout
+            </a>
+        </div>
 
     </div>
 </nav>

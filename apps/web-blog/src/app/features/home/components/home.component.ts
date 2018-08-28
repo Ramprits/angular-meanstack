@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { BaseComponent } from '@myworkspace/core';
 import { PostService } from '../../../core/services/post.service';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -11,6 +10,7 @@ import { TokenService } from '@myworkspace/core/services/token-service/token.ser
 const base_url = environment.api_url;
 import * as _ from 'lodash';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'scope-home',
   templateUrl: 'home.component.html',

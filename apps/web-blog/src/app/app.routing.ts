@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'people',
     loadChildren: './features/people/people.module#PeopleModule'
   },
+  {
+    path: 'product',
+    loadChildren: './features/product/product.module#ProductModule'
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }
 ];
