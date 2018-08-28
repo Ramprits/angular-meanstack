@@ -31,4 +31,10 @@ export class PeopleComponent implements OnInit {
       );
     }, 10);
   }
+
+  following(user) {
+    this.userService.followUser(user._id).subscribe(data => {
+      console.log(JSON.stringify(data));
+    });
+  }
 }
