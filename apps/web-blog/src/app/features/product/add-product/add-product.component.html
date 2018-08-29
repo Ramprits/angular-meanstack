@@ -9,7 +9,7 @@
   <div class="field">
     <label class="label">Description</label>
     <p class="control">
-      <textarea name="description" id="" class="textarea" formControlName="description" cols="10" rows="5"></textarea>
+      <textarea name="description" id="" class="textarea" formControlName="description" cols="5" rows="3"></textarea>
     </p>
   </div>
 
@@ -39,7 +39,7 @@
 
   <div class="field is-grouped">
     <p class="control">
-      <button class="button is-primary is-small" type="submit">Submit</button>
+      <button class="button is-primary is-small" [disabled]="productForm.invalid" type="submit">Submit</button>
     </p>
     <p class="control">
       <button class="button is-link is-small">Cancel</button>

@@ -6,7 +6,7 @@
 
 <div class="columns is-multiline">
   <div class="column  is-multiline is-4" *ngFor="let product of products">
-    <div class="card">
+    <div class="card is-narrow">
       <div class="card-image">
         <figure class="image is-4by3">
           <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
@@ -26,7 +26,7 @@
             <p class="subtitle is-6">@johnsmith</p>
           </div>
         </div>
-        <div class="content">
+        <div class="content is-scrollable">
           {{product.description}}
         </div>
       </div>
