@@ -2,8 +2,7 @@
   <div class="column is-3">
     <app-side-nav></app-side-nav>
   </div>
-  <div class="column is-3" *ngFor="let user of users">
-
+  <div class="column is-3 is-multiple" *ngFor="let user of following">
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
@@ -19,17 +18,13 @@
           </div>
           <div class="media-content">
             <p class="title is-4">
-              {{user.username}}
+              {{user.userFollowed.username}}
             </p>
-            <p class="subtitle is-6">
-              {{user.email}}
-            </p>
+
           </div>
         </div>
         <div class="block">
-          <a class="button is-info is-small m-l-10" *ngIf="!CheckInArray(userArray,user._id)" (click)="following(user)"> Follow</a>
-          <a class="button is-info is-small m-l-10 disabled" *ngIf="CheckInArray(userArray,user._id)"> Following</a>
-
+          <a class="button is-info is-small m-l-10" (click)="unFollow(user.userFollowed)">Un-Following</a>
         </div>
       </div>
     </div>

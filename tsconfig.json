@@ -7,28 +7,15 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@myworkspace/*": [
-        "libs/*"
-      ],
-      "@myworkspace/web": [
-        "xplat/web/index.ts"
-      ],
-      "@myworkspace/web/*": [
-        "xplat/web/*"
-      ]
+      "@myworkspace/*": ["libs/*"],
+      "@app/*": ["apps/web-blog/*"],
+      "@myworkspace/web": ["xplat/web/index.ts"],
+      "@myworkspace/web/*": ["xplat/web/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

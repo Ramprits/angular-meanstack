@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'apps/web-blog/src/environments/environment';
 import { Observable } from 'rxjs';
 const base_url = environment.api_url;
-
+import * as _ from 'lodash';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +16,21 @@ export class UserService {
     );
   }
 
-  followUser(id): Observable<any> {
-    return this.http.post<any>(`${base_url}/api/friends`, { userFollowed: id });
+  getUserById(id: string): Observable<any> {
+    return this.http.get<any>(`${base_url}/api/getUsers/${id}`);
   }
+
+  getUserByName(username: string): Observable<any> {
+    return this.http.get<any>(`${base_url}/api/getUsers/${username}`);
+  }
+
+  followUser(userFollowed): Observable<any> {
+    return this.http.post<any>(`${base_url}/api/friends`, { userFollowed });
+  }
+
+  unFollowUser(userFollowed): Observable<any> {
+    return this.http.post<any>(`${base_url}/api/friends/unfollowUser`, { userFollowed });
+  }
+
+
 }

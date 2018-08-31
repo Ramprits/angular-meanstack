@@ -4,6 +4,8 @@ import { BaseComponent } from '@myworkspace/core';
 import * as io from 'socket.io-client';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../../environments/environment';
+const base_url = environment.api_url;
 
 @Component({
   selector: 'app-product',
@@ -19,6 +21,7 @@ export class ProductComponent extends BaseComponent implements OnInit {
     private toastr: ToastrService
   ) {
     super();
+    this.socket = io(base_url);
   }
 
   ngOnInit() {

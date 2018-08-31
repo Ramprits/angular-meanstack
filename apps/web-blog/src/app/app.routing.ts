@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'product',
     loadChildren: './features/product/product.module#ProductModule'
   },
+  {
+    path: 'following',
+    loadChildren: './features/following/following.module#FollowingModule'
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }
 ];

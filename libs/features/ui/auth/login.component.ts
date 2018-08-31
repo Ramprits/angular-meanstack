@@ -44,7 +44,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
         if (data) {
           this.loginForm.reset();
           this.tokenService.SetToken(data.token);
-          this.router.navigateByUrl('home');
+          this.router.navigateByUrl('/home');
         }
       },
       err => {

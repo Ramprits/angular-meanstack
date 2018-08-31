@@ -26,7 +26,8 @@
           <i class="fas fa-home"></i>
         </span></a></li>
 
-    <li><a>Followers <span class="icon">
+    <li><a [routerLink]="['/following']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Following
+        <span class="icon">
           <i class="fas fa-fire"></i>
         </span></a></li>
     <li><a>Photos <span class="icon">

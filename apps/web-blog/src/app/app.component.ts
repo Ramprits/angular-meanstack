@@ -13,7 +13,8 @@ export class AppComponent extends AppBaseComponent implements OnInit {
     super();
   }
   ngOnInit() {
-    const token = this.tokenService.GetToken();
+    const token = this.tokenService.GetPayLoad();
+    console.log(token);
     if (token) {
       this.router.navigate(['/home']);
     } else {

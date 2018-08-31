@@ -14,23 +14,19 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent extends BaseComponent
   implements OnInit, AfterViewInit, AfterContentInit {
-  ngAfterContentInit(): void {
-    const token = this.tokenService.GetPayLoad();
-    if (token) {
-      this.user = token;
-    }
-  }
-  isVisible = false;
-  user: any;
-  constructor(private tokenService: TokenService, private router: Router) {
+  loggedInUser: any;
+  ngAfterContentInit(): void {}
+  constructor(public tokenService: TokenService, private router: Router) {
     super();
   }
   ngAfterViewInit(): void {}
-  ngOnInit() {}
+  ngOnInit() {
+    this.loggedInUser = this.tokenService.GetPayLoad();
+  }
 
   logout() {
     this.tokenService.DeleteToken();
     this.router.navigate(['/login']);
-    this.user = null;
+    this.loggedInUser = null;
   }
 }
