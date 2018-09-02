@@ -22,6 +22,7 @@ export class HeaderComponent extends BaseComponent
   ngAfterViewInit(): void {}
   ngOnInit() {
     this.loggedInUser = this.tokenService.GetPayLoad();
+    console.log(this.tokenService.getUserName())
   }
 
   logout() {

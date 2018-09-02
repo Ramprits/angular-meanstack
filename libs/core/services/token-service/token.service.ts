@@ -32,17 +32,11 @@ export class TokenService {
     }
     return payload.data;
   }
-
+getUserName():string{
+  return this.GetPayLoad().username;
+}
   loggedIn() {
     return !!this.cookieService.get(cookie);
   }
-  getUserName(): string {
-    let token = this.GetToken();
-    let payload;
-    if (token) {
-      payload = token.split('.')[1];
-      payload = JSON.parse(window.atob(payload));
-    }
-    return payload.data.username;
-  }
+  
 }
