@@ -30,6 +30,15 @@ const routes: Routes = [
     path: 'following',
     loadChildren: './features/following/following.module#FollowingModule'
   },
+  {
+    path: 'followers',
+    loadChildren: './features/followers/followers.module#FollowersModule'
+  },
+  {
+    path: 'notifications',
+    loadChildren:
+      './features/notifications/notifications.module#NotificationsModule'
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent }
 ];

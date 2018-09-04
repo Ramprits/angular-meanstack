@@ -19,8 +19,8 @@ export class AuthService {
         data
       )
       .pipe(
-        tap(data => {
-        })
+        tap(() => {
+      })
       );
   }
 
@@ -31,8 +31,8 @@ export class AuthService {
         data
       )
       .pipe(
-        tap(data => {
-        })
+        tap(() => {
+      })
       );
   }
 
