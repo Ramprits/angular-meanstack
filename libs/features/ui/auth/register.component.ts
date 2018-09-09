@@ -35,23 +35,6 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     });
   }
 
-  getUserNameErrorMessage() {
-    return this.registerForm.get('username').hasError('required')
-      ? 'You must enter a username'
-      : '';
-  }
-  getEmailErrorMessage() {
-    return this.registerForm.get('email').hasError('required')
-      ? 'You must enter a email'
-      : '';
-  }
-
-  getPasswordErrorMessage() {
-    return this.registerForm.get('password').hasError('required')
-      ? 'You must enter a password'
-      : '';
-  }
-
   onSubmit(registerData: AuthModel) {
     this.authService.register(registerData).subscribe(
       data => {

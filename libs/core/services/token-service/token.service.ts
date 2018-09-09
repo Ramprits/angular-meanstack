@@ -32,11 +32,11 @@ export class TokenService {
     }
     return payload.data;
   }
-getUserName():string{
-  return this.GetPayLoad().username;
-}
+  
+  getUserName(): string {
+    return this.GetPayLoad().username;
+  }
   loggedIn() {
     return !!this.cookieService.get(cookie);
   }
-  
 }
