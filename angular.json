@@ -24,9 +24,7 @@
               "testing/tsconfig.libs.json",
               "testing/tsconfig.libs.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -52,9 +50,7 @@
               "testing/tsconfig.xplat.json",
               "testing/tsconfig.xplat.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -83,6 +79,9 @@
               "apps/web-blog/src/assets"
             ],
             "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "xplat/web/scss/_index.scss",
               "apps/web-blog/src/styles.scss",
               "node_modules/bulma/css/bulma.min.css"
@@ -133,9 +132,7 @@
             "polyfills": "apps/web-blog/src/polyfills.ts",
             "tsConfig": "apps/web-blog/tsconfig.spec.json",
             "karmaConfig": "apps/web-blog/karma.conf.js",
-            "styles": [
-              "apps/web-blog/src/styles.scss"
-            ],
+            "styles": ["apps/web-blog/src/styles.scss"],
             "scripts": [],
             "assets": [
               "apps/web-blog/src/favicon.ico",
@@ -150,9 +147,7 @@
               "apps/web-blog/tsconfig.app.json",
               "apps/web-blog/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -172,9 +167,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/web-blog-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

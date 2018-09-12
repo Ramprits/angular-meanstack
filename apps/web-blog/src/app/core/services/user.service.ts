@@ -29,8 +29,15 @@ export class UserService {
   }
 
   unFollowUser(userFollowed): Observable<any> {
-    return this.http.post<any>(`${base_url}/api/friends/unfollowUser`, { userFollowed });
+    return this.http.post<any>(`${base_url}/api/friends/unfollowUser`, {
+      userFollowed
+    });
   }
 
-
+  MarkeNotification(Id, DeleteData?) {
+    return this.http.post(`${base_url}/api/friends/mark/${Id}`, {
+      Id,
+      DeleteData
+    });
+  }
 }

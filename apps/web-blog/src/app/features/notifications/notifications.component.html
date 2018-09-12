@@ -1,33 +1,30 @@
-<div class="columns">
-  <div class="column is-3">
-    <app-side-nav></app-side-nav>
-  </div>
-  <!-- <div class="column is-3 is-multiple" *ngFor="let user of following">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
-        </figure>
+<div class="container">
+  <article class="media" *ngFor="let item of notifications">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          {{item.message}}
+          <br>
+          {{timeFromNow(item.created)}}
+        </p>
       </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4">
-              {{user.userFollowed.username}}
-            </p>
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <a class="level-item" (click)="MarkNotification(item)">
+            <span class="icon is-small"><i class="far fa-check-square"></i></span>
+          </a>
+          <a class="level-item" (click)="DeleteNotification(item)">
+            <span class="icon is-small"><i class="far fa-trash-alt"></i></span>
+          </a>
 
-          </div>
         </div>
-        <div class="block">
-          <a class="button is-info is-small m-l-10" (click)="unFollow(user.userFollowed)">Un-Following</a>
-        </div>
-      </div>
+      </nav>
     </div>
-  </div> -->
 
+  </article>
 </div>

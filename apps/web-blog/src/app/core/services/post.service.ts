@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { environment } from 'apps/web-blog/src/environments/environment';
-import { Observable } from 'rxjs';
-import { PostRepository } from '../../../../../../libs/core/services/PostRepository';
+import { PostRepository } from '@myworkspace/core/services/PostRepository';
 
-const base_url = environment.api_url + `/api/posts`;
 @Injectable({
   providedIn: 'root'
 })

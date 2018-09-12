@@ -29,10 +29,15 @@ export class TokenService {
     if (token) {
       payload = token.split('.')[1];
       payload = JSON.parse(window.atob(payload));
+    } else {
+      console.error('Token expire');
+    }
+    if (!payload) {
+      console.log('Payload does not available');
     }
     return payload.data;
   }
-  
+
   getUserName(): string {
     return this.GetPayLoad().username;
   }
