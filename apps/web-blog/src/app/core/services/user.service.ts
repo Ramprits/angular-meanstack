@@ -34,10 +34,10 @@ export class UserService {
     });
   }
 
-  MarkeNotification(Id, DeleteData?) {
+  MarkeNotification(Id, deleteValue?):Observable<any> {
     return this.http.post(`${base_url}/api/friends/mark/${Id}`, {
       Id,
-      DeleteData
+      deleteValue
     });
   }
 }
